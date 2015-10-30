@@ -8,3 +8,4 @@ set autoindent
 set showcmd
 
 color darkblue
+set colorcolumn=80
