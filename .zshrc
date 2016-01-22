@@ -80,3 +80,6 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/
+
+alias please='sudo $(fc -ln -1)'
+
