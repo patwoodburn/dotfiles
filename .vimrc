@@ -15,5 +15,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+set t_Co=256
 color dracula
 set colorcolumn=80
