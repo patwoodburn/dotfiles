@@ -40,11 +40,12 @@ call vundle#begin()
   Plugin 'flazz/vim-colorschemes'
   Plugin 'airblade/vim-gitgutter'
   Plugin 'jistr/vim-nerdtree-tabs'
+  Plugin 'terryma/vim-multiple-cursors'
 call vundle#end()
 filetype plugin indent on
 
 "nerd tree config
-map <C-n> :NERDTreeTabsToggle<CR>
+map <C-t> :NERDTreeTabsToggle<CR>
 "airline config
 set laststatus=2
 
