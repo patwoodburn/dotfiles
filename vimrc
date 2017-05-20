@@ -8,7 +8,7 @@ set nu
 set ruler
 syntax enable
 set expandtab
-set tabstop=2 shiftwidth=2 softtabstop=2
+set tabstop=4 shiftwidth=4 softtabstop=4
 set autoindent
 set showcmd
 set noswapfile
@@ -22,7 +22,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 set t_Co=256
-set colorcolumn=80
+set colorcolumn=120
 highlight ColorColumn ctermbg=9
 
 "shouldn't need this but might be nice
@@ -50,3 +50,9 @@ map <C-t> :NERDTreeTabsToggle<CR>
 set laststatus=2
 
 colorscheme gotham
+let g:airline#extensions#tabline#enabled = 1
+au VimEnter *  NERDTree
+
+"vim wson support
+autocmd BufNewFile,BufRead *.json set ft=javascript
+
