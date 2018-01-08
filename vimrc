@@ -8,7 +8,7 @@ set nu
 set ruler
 syntax enable
 set expandtab
-set tabstop=4 shiftwidth=4 softtabstop=4
+set tabstop=2 shiftwidth=2 softtabstop=2
 set autoindent
 set showcmd
 set noswapfile
@@ -51,6 +51,7 @@ set laststatus=2
 
 colorscheme gotham
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 au VimEnter *  NERDTree
 
 "vim wson support
