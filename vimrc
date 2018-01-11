@@ -41,6 +41,7 @@ call vundle#begin()
   Plugin 'airblade/vim-gitgutter'
   Plugin 'jistr/vim-nerdtree-tabs'
   Plugin 'terryma/vim-multiple-cursors'
+  Plugin 'w0rp/ale'
 call vundle#end()
 filetype plugin indent on
 
@@ -52,8 +53,8 @@ set laststatus=2
 colorscheme gotham
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#ale#enabled = 1
 au VimEnter *  NERDTree
 
 "vim wson support
 autocmd BufNewFile,BufRead *.json set ft=javascript
-
