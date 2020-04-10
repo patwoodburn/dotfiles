@@ -22,7 +22,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 set t_Co=256
-set colorcolumn=120
+set colorcolumn=80
 highlight ColorColumn ctermbg=9
 
 "shouldn't need this but might be nice
@@ -34,6 +34,7 @@ endif
 call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'
   Plugin 'scrooloose/nerdtree'
+  Plugin 'Xuyuanp/nerdtree-git-plugin'
   Plugin 'vim-airline/vim-airline'
   Plugin 'vim-airline/vim-airline-themes'
   Plugin 'bronson/vim-trailing-whitespace'
@@ -58,3 +59,6 @@ au VimEnter *  NERDTree
 
 "vim wson support
 autocmd BufNewFile,BufRead *.json set ft=javascript
+
+"vim make settings
+autocmd FileType make setlocal noexpandtab
