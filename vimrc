@@ -39,6 +39,7 @@ call vundle#begin()
   Plugin 'vim-airline/vim-airline-themes'
   Plugin 'bronson/vim-trailing-whitespace'
   Plugin 'flazz/vim-colorschemes'
+  Plugin 'dracula/vim',{'name':'dracula'}
   Plugin 'airblade/vim-gitgutter'
   Plugin 'jistr/vim-nerdtree-tabs'
   Plugin 'terryma/vim-multiple-cursors'
@@ -51,7 +52,7 @@ map <C-t> :NERDTreeTabsToggle<CR>
 "airline config
 set laststatus=2
 
-silent! colorscheme gotham
+silent! colorscheme dracula
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
