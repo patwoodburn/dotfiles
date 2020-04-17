@@ -1,0 +1,30 @@
+#!/bin/bash
+background="#000000"
+foreground="#f8f8f2"
+norm_black="#000000"
+norm_red="#ff5555"
+norm_green="#50fa7b"
+norm_yellow="#f1fa8c"
+norm_blue="#bd93f9"
+norm_magenta="#ff79c6"
+norm_cyan="#8be9fd"
+norm_white="#bfbfbf"
+
+light_blue="#caa9fa"
+
+dim_blue="#4d5b86"
+dim_magenta="#ff46b0"
+
+#echo -e -n "\ue0b0"
+while true; do
+  out=""
+  out+="%{l}"
+  out+="%{c}"
+  out+="%{r}"
+  # out+=$(echo -e -n "%{B$light_blue} \uf001  %{B-}")
+  out+=$(echo "%{B$norm_blue} $(acpi)  %{B-}")
+  out+=$(echo "%{B$dim_blue} $(date)  %{B-}")
+  echo -n -e $out | lemonbar -p -d -g x25 -f Fire-Code -f "-misc-fira code-medium-r-normal--0-0-0-0-m-0-iso8859-1" -B $background -F $norm_black
+  sleep 1
+done
+
