@@ -44,6 +44,10 @@ call vundle#begin()
   Plugin 'jistr/vim-nerdtree-tabs'
   Plugin 'terryma/vim-multiple-cursors'
   Plugin 'w0rp/ale'
+  Plugin 'embear/vim-localvimrc'
+  Plugin 'junegunn/limelight.vim'
+  Plugin 'junegunn/goyo.vim'
+  Plugin 'nathanaelkane/vim-indent-guides'
 call vundle#end()
 filetype plugin indent on
 
@@ -63,3 +67,7 @@ autocmd BufNewFile,BufRead *.json set ft=javascript
 
 "vim make settings
 autocmd FileType make setlocal noexpandtab
+
+let g:localvimrc_sandbox=0
+let g:localvimrc_ask=0
+let g:indent_guides_enable_on_vim_startup=1

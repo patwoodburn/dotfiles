@@ -17,7 +17,7 @@ export PATH="/Users/pwoodb001c/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:
 
 source $ZSH/oh-my-zsh.sh
 
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
@@ -50,3 +50,8 @@ function zle-line-init zle-keymap-select {
 
 zle -N zle-line-init
 zle -N zle-keymap-select
+
+localConfig=~/sources/localdefault.sh
+if [ -e "$localConfig" ]; then
+  source ~/sources/localdefault.sh
+fi
