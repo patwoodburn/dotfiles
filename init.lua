@@ -9,18 +9,18 @@ vim.o.relativenumber = true
 
 -- end of intented line column
 vim.o.ruler = true
-vim.o.t_Co = 256
-vim.o.cc = 79
+-- vim.o.t_Co = 256
+-- vim.o.cc = 79
 vim.cmd[[highlight ColorColumn ctermbg=9]]
 
 vim.o.cursorline = true
 
 -- don't save dumb files
-vim.o.noswapfile = true
+vim.g.noswapfile = true
 
 -- nice braces
 vim.o.showmatch = true
-vim.o.matchParen = true
+-- vim.o.matchParen = true
 
 vim.o.spell = true
 
@@ -75,6 +75,20 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup{
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function ()
+      local configs = require("nvim-treesitter.configs")
+
+      configs.setup({
+          ensure_installed = { "lua" },
+          sync_install = false,
+          highlight = { enable = true },
+          indent = { enable = true },
+      })
+    end
+  },
   {
     'dracula/vim',
     lazy = false,
@@ -223,32 +237,7 @@ require('lazy').setup{
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
       local servers = {
-        lua_ls = {
-          -- cmd = {...},
-          -- filetypes { ...},
-          -- capabilities = {},
-          settings = {
-            Lua = {
-              runtime = { version = 'LuaJIT' },
-              workspace = {
-                checkThirdParty = false,
-                -- Tells lua_ls where to find all the Lua files that you have loaded
-                -- for your neovim configuration.
-                library = {
-                  '${3rd}/luv/library',
-                  unpack(vim.api.nvim_get_runtime_file('', true)),
-                },
-                -- If lua_ls is really slow on your computer, you can try this instead:
-                -- library = { vim.env.VIMRUNTIME },
-              },
-              completion = {
-                callSnippet = 'Replace',
-              },
-              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
-            },
-          },
-        },
+        rust_analyzer = {},
       }
       require('mason').setup()
 
