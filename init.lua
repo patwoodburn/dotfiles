@@ -76,6 +76,27 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup{
   {
+    "nvimdev/dashboard-nvim",
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        config = {
+          week_header = {
+            enable = true,
+          }
+        },
+      }
+    end,
+  },
+  {
+    "rcarriga/nvim-notify",
+    event = 'VimEnter',
+    config = function()
+      notify = require('notify')
+      vim.notify = notify
+    end,
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function ()
@@ -159,7 +180,7 @@ require('lazy').setup{
   },
   'nvim-telescope/telescope-file-browser.nvim',
   {
-    'ThePrimeagen/harpoon', 
+    'ThePrimeagen/harpoon',
     branch = 'harpoon2',
     config = function()
       -- harpoon config largly authors config until i decide otherwise
@@ -167,7 +188,7 @@ require('lazy').setup{
       harpoon:setup({})
       vim.keymap.set("n", "<leader>hs", ":Telescope harpoon marks<Cr>", {noremap=true})
       vim.keymap.set("n", "<leader>ha", function ()
-        harpoon:list():append()
+        harpoon:list():add()
       end, {noremap=true})
       vim.keymap.set("n", "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
       vim.keymap.set("n", "<leader>h1", function() harpoon:list():select(1) end)
@@ -239,6 +260,7 @@ require('lazy').setup{
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
       local servers = {
         rust_analyzer = {},
+        zls = {}
       }
       require('mason').setup()
 
@@ -353,6 +375,33 @@ require('lazy').setup{
           { name = 'luasnip' },
           { name = 'path' },
         },
+      }
+    end,
+  },
+  "kshenoy/vim-signature",
+  {
+    "rmagatti/auto-session",
+    config = function ()
+      require("auto-session").setup{
+        log_level = "error",
+        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
+        auto_session_enable_last_session = true,
+        auto_save_enabled = true,
+        auto_restore_enabled = true,
+        -- auto_session_use_git_branch = true,
+        session_lens = {
+          load_on_setup = true
+        },
+        post_save_cmds = {
+          function()
+            vim.notify("session saved")
+          end,
+        },
+        post_restore_cmds = {
+          function()
+            vim.notify("session restored")
+          end,
+        }
       }
     end,
   },
