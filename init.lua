@@ -39,7 +39,7 @@ vim.o.undofile = true
 -- better search
 vim.o.ignorecase = true
 vim.o.smartcase = true
-vim.o.hlsearch = true
+vim.o.hlsearch = false
 
 -- colmn for signs
 vim.o.signcolumn = 'yes'
@@ -59,11 +59,12 @@ vim.o.softtabstop = 2
 vim.o.autoindent = true
 
 -- better splits
-vim.keymap.set("n", "<C-J> ", "<C-W><C-J>", {noremap=true})
-vim.keymap.set("n", "<C-K> ", "<C-W><C-K>", {noremap=true})
-vim.keymap.set("n", "<C-L> ", "<C-W><C-L>", {noremap=true})
-vim.keymap.set("n", "<C-H> ", "<C-W><C-H>", {noremap=true})
-
+vim.keymap.set("n", "<C-J>", "<C-W><C-J>", {noremap = true})
+vim.keymap.set("n", "<C-K>", "<C-W><C-K>", {noremap = true})
+vim.keymap.set("n", "<C-L>", "<C-W><C-L>", {noremap = true})
+vim.keymap.set("n", "<C-H>", "<C-W><C-H>", {noremap = true})
+vim.keymap.set("n", "<C-S>", ":split<Cr>", {noremap = true})
+vim.keymap.set("n", "<C-V>", ":vsplit<Cr>", {noremap = true})
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -175,6 +176,8 @@ require('lazy').setup{
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
+      vim.keymap.set('n', '<leader>sm', builtin.marks, { desc = '[S]earch Marks' })
+      vim.keymap.set('n', '<leader>sr', builtin.registers, { desc = '[S]earch Registers' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
     end
   },
@@ -306,7 +309,7 @@ require('lazy').setup{
       'saadparwaiz1/cmp_luasnip',
 
       -- Adds other completion capabilities.
-      --  nvim-cmp does not ship with all sources by default. They are split
+      --  nvim-cmp does not ship with all sources by default. They are swplit
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
@@ -388,7 +391,6 @@ require('lazy').setup{
         auto_session_enable_last_session = true,
         auto_save_enabled = true,
         auto_restore_enabled = true,
-        -- auto_session_use_git_branch = true,
         session_lens = {
           load_on_setup = true
         },
