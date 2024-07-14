@@ -105,6 +105,7 @@ require('lazy').setup{
 
       configs.setup({
           ensure_installed = { "lua" },
+          auto_install = true,
           sync_install = false,
           highlight = { enable = true },
           indent = { enable = true },
@@ -263,7 +264,9 @@ require('lazy').setup{
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
       local servers = {
         rust_analyzer = {},
-        zls = {}
+        zls = {},
+        kotlin_language_server = {},
+        jdtls = {},
       }
       require('mason').setup()
 
@@ -272,6 +275,7 @@ require('lazy').setup{
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format lua code
+        'misspell',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -289,6 +293,8 @@ require('lazy').setup{
       }
     end,
   },
+  -- "mfussenegger/nvim-lint",
+  -- "rshkarin/mason-nvim-lint",
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
@@ -370,6 +376,17 @@ require('lazy').setup{
           ['<C-h>'] = cmp.mapping(function()
             if luasnip.locally_jumpable(-1) then
               luasnip.jump(-1)
+            end
+          end, { 'i', 's' }),
+          ['<Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              local entry = cmp.get_selected_entry()
+              if not entry then
+                cmp.select_test_item({ behavior = cmp.SelectBehavior.Select })
+              end
+              cmp.confirm()
+            else
+              fallback()
             end
           end, { 'i', 's' }),
         },
