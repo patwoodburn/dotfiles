@@ -54,9 +54,14 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
-localConfig=~/sources/localdefault.sh
+export sourcesDir=$HOME/sources
+export localConfig=$sourcesDir/localdefault.sh
+if [ ! -e "$localConfig" ]; then
+  mkdir -p $sourcesDir
+  touch $localConfig
+fi
 if [ -e "$localConfig" ]; then
-  source ~/sources/localdefault.sh
+  source $HOME/sources/localdefault.sh
 fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
