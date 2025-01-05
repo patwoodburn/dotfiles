@@ -1,0 +1,22 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding.x = 10
+padding.y = 10
+
+decorations = "Full"
+
+opacity = 0.9
+blur = true
+
+option_as_alt = "Both"
+
+[font]
+normal=  {family = "OpenDyslexicMono", style = "Regular"}
+size = 18
+
+[keyboard]
+bindings = [
+  {key = "V", mods = "Control", action = "Paste"}
+]
