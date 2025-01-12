@@ -7,3 +7,6 @@
 [submodule ".config/awesome/resources/dracula-icons"]
 	path = .config/awesome/resources/dracula-icons
 	url = https://github.com/m4thewz/dracula-icons.git
+[submodule ".config/awesome/awesome-buttons"]
+	path = .config/awesome/awesome-buttons
+	url = https://github.com/streetturtle/awesome-buttons.git
