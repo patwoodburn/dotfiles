@@ -25,8 +25,8 @@ theme.fg_normal = "#f8f8f2"
 theme.fg_focus = "#ffffff"
 theme.fg_urgent = "#f8f8f2"
 
-theme.useless_gap = dpi(2)
-theme.border_width = dpi(2)
+theme.useless_gap = dpi(4)
+theme.border_width = dpi(4)
 theme.border_normal = theme.bg_normal
 theme.border_focus = "#bd93f9" -- "#6272a4"
 theme.border_marked = "#ff79c6"
@@ -66,10 +66,10 @@ theme.taglist_bg_focus = theme.bg_normal
 -- Generate taglist squares:
 local taglist_square_size = dpi(4)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
-    taglist_square_size, theme.fg_normal
+    taglist_square_size, theme.purple
 )
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
-    taglist_square_size, theme.fg_normal
+    taglist_square_size, theme.purple
 )
 
 -- Variables set for theming notifications:
@@ -91,8 +91,8 @@ theme.menu_width  = dpi(100)
 --theme.bg_widget = "#cc0000"
 
 -- Define the image to load
-theme.titlebar_close_button_normal = gears.color.recolor_image(themes_path.."default/titlebar/close_normal.png", theme.red)
-theme.titlebar_close_button_focus  = gears.color.recolor_image(themes_path.."default/titlebar/close_focus.png", theme.red)
+theme.titlebar_close_button_normal = gears.color.recolor_image(themes_path.."default/titlebar/close_normal.png", theme.fg_normal)
+theme.titlebar_close_button_focus  = gears.color.recolor_image(themes_path.."default/titlebar/close_focus.png", theme.fg_normal)
 
 theme.titlebar_minimize_button_normal = themes_path.."default/titlebar/minimize_normal.png"
 theme.titlebar_minimize_button_focus  = themes_path.."default/titlebar/minimize_focus.png"
