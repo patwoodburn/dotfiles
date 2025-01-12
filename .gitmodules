@@ -4,3 +4,6 @@
 [submodule ".config/awesome/awesome-wm-widgets"]
 	path = .config/awesome/awesome-wm-widgets
 	url = https://github.com/streetturtle/awesome-wm-widgets.git
+[submodule ".config/awesome/resources/dracula-icons"]
+	path = .config/awesome/resources/dracula-icons
+	url = https://github.com/m4thewz/dracula-icons.git
