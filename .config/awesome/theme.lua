@@ -6,6 +6,7 @@ local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
+local gears = require("gears")
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
 local config_dir = gfs.get_configuration_dir()
@@ -33,6 +34,15 @@ theme.border_marked = "#ff79c6"
 -- Extras
 theme.titlebar_bg_focus = theme.bg_normal
 theme.hotkeys_modifiers_fg = "#adadad"
+
+-- dracul colors
+theme.cyan = "#8be9fd"
+theme.green = "#50fa7b"
+theme.orange = "#ffb86c"
+theme.pink = "#ff79c6"
+theme.purple = "#bd93f9"
+theme.red = "#ff5555"
+theme.yellow = "#f1fa8c"
 
 -- Wibar
 theme.taglist_squares_sel = themes_path.."/taglist/squarefw.png"
@@ -81,8 +91,8 @@ theme.menu_width  = dpi(100)
 --theme.bg_widget = "#cc0000"
 
 -- Define the image to load
-theme.titlebar_close_button_normal = themes_path.."default/titlebar/close_normal.png"
-theme.titlebar_close_button_focus  = themes_path.."default/titlebar/close_focus.png"
+theme.titlebar_close_button_normal = gears.color.recolor_image(themes_path.."default/titlebar/close_normal.png", theme.red)
+theme.titlebar_close_button_focus  = gears.color.recolor_image(themes_path.."default/titlebar/close_focus.png", theme.red)
 
 theme.titlebar_minimize_button_normal = themes_path.."default/titlebar/minimize_normal.png"
 theme.titlebar_minimize_button_focus  = themes_path.."default/titlebar/minimize_focus.png"

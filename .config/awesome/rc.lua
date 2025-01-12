@@ -55,7 +55,7 @@ beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
-editor = os.getenv("EDITOR") or "nano"
+editor = "vim"
 editor_cmd = terminal .. " -e " .. editor
 internet_browser = "google-chrome-stable"
 discord = "discord"
@@ -127,9 +127,10 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibar
 -- Create a textclock widget
--- mytextclock = wibox.widget.textclock()
-mytextclock = require("awesome-wm-widgets.word-clock-widget.word-clock")
+mytextclock = wibox.widget.textclock()
+-- mytextclock = require("awesome-wm-widgets.word-clock-widget.word-clock")
 battery = require("awesome-wm-widgets.battery-widget.battery")
+volume = require("awesome-wm-widgets.volume-widget.volume")
 
 
 -- Create a wibox for each screen and add it
@@ -232,9 +233,10 @@ awful.screen.connect_for_each_screen(function(s)
 
 	-- Create the wibox
 	s.mywibox = awful.wibar({
-    position = "bottom",
+    position = "top",
     screen = s,
-    shape = function(cr, w, h) gears.shape.rounded_rect(cr,w,h, 5) end
+    shape = function(cr, w, h) gears.shape.rounded_rect(cr,w,h, 5) end,
+    ontop = true
 
   })
 
@@ -243,6 +245,7 @@ awful.screen.connect_for_each_screen(function(s)
 		layout = wibox.layout.align.horizontal,
 		{ -- Left widgets
 			layout = wibox.layout.fixed.horizontal,
+      wibox.widget.textbox("  "),
 			mylauncher,
 			s.mytaglist,
 			s.mypromptbox,
@@ -251,9 +254,7 @@ awful.screen.connect_for_each_screen(function(s)
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			wibox.widget.systray(),
-			mytextclock{
-        is_human_readable = true
-      },
+      volume(),
       battery{
         path_to_icons = gears.filesystem.get_configuration_dir().."resources/icons/symbolic/status/",
         show_current_level = true,
@@ -262,6 +263,7 @@ awful.screen.connect_for_each_screen(function(s)
         margin_left = 1,
       },
 			s.mylayoutbox,
+			mytextclock,
 		},
 	})
 end)
@@ -569,29 +571,29 @@ client.connect_signal("request::titlebars", function(c)
 		end)
 	)
 
-	awful.titlebar(c):setup({
+	awful.titlebar(c, {position = "right"}):setup({
 		{ -- Left
 			awful.titlebar.widget.iconwidget(c),
-			buttons = buttons,
-			layout = wibox.layout.fixed.horizontal,
+			awful.titlebar.widget.closebutton(c),
+			awful.titlebar.widget.maximizedbutton(c),
+			awful.titlebar.widget.ontopbutton(c),
+			awful.titlebar.widget.floatingbutton(c),
+			awful.titlebar.widget.stickybutton(c),
+			layout = wibox.layout.fixed.vertical,
 		},
 		{ -- Middle
-			{ -- Title
-				align = "center",
-				widget = awful.titlebar.widget.titlewidget(c),
-			},
+			--{ -- Title
+				--align = "center",
+				--widget = awful.titlebar.widget.titlewidget(c),
+			--},
 			buttons = buttons,
-			layout = wibox.layout.flex.horizontal,
+			layout = wibox.layout.flex.vertical,
 		},
 		{ -- Right
-			awful.titlebar.widget.floatingbutton(c),
-			awful.titlebar.widget.maximizedbutton(c),
-			awful.titlebar.widget.stickybutton(c),
-			awful.titlebar.widget.ontopbutton(c),
-			awful.titlebar.widget.closebutton(c),
-			layout = wibox.layout.fixed.horizontal(),
+      buttons = buttons,
+			layout = wibox.layout.fixed.vertical,
 		},
-		layout = wibox.layout.align.horizontal,
+		layout = wibox.layout.align.vertical,
 	})
 end)
 
