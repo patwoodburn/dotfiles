@@ -131,6 +131,7 @@ mytextclock = wibox.widget.textclock()
 -- mytextclock = require("awesome-wm-widgets.word-clock-widget.word-clock")
 battery = require("awesome-wm-widgets.battery-widget.battery")
 volume = require("awesome-wm-widgets.volume-widget.volume")
+logout_popup = require("awesome-wm-widgets.logout-popup-widget.logout-popup")
 
 
 -- Create a wibox for each screen and add it
@@ -236,7 +237,7 @@ awful.screen.connect_for_each_screen(function(s)
     position = "top",
     screen = s,
     shape = function(cr, w, h) gears.shape.rounded_rect(cr,w,h, 5) end,
-    ontop = true
+    ontop = false
 
   })
 
@@ -264,6 +265,7 @@ awful.screen.connect_for_each_screen(function(s)
       },
 			s.mylayoutbox,
 			mytextclock,
+      logout_popup.widget{}
 		},
 	})
 end)
@@ -373,7 +375,8 @@ globalkeys = gears.table.join(
 	-- Menubar
 	awful.key({ modkey }, "p", function()
 		menubar.show()
-	end, { description = "show the menubar", group = "launcher" })
+	end, { description = "show the menubar", group = "launcher" }),
+  awful.key({ modkey }, "l", function() logout_popup.launch{hide_on_leave=true} end, {description = "show logout", group="awesome"})
 )
 
 clientkeys = gears.table.join(
@@ -416,6 +419,7 @@ clientkeys = gears.table.join(
 		c.maximized_horizontal = not c.maximized_horizontal
 		c:raise()
 	end, { description = "(un)maximize horizontally", group = "client" })
+
 )
 
 -- Bind all key numbers to tags.
@@ -516,6 +520,7 @@ awful.rules.rules = {
 				"Wpa_gui",
 				"veromix",
 				"xtightvncviewer",
+        "steam_app_.*",
 			},
 
 			-- Note that the name property shown in xprop might be set slightly after creation of the client
@@ -533,8 +538,27 @@ awful.rules.rules = {
 	},
 
 	-- Add titlebars to normal clients and dialogs
-	{ rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = true } },
+	{
+    rule_any = {
+      type = { "normal", "dialog" }
+    },
+    except_any = {
+      class = {"steam_app_.*"}
+    },
+    properties = { titlebars_enabled = true }
+  },
 
+  {
+    rule_any = {
+      rule_any = {
+        class = {"steam_app_.*"}
+      }
+    },
+    properties = {
+      ontop = true,
+      honor_workarea = false,
+    }
+  }
 	-- Set Firefox to always map on the tag named "2" on screen 1.
 	-- { rule = { class = "Firefox" },
 	--   properties = { screen = 1, tag = "2" } },
@@ -609,3 +633,4 @@ client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
 end)
 -- }}}
+awful.spawn.single_instance("picom", {})

@@ -1,3 +1,9 @@
-my dot files
+# my dot files
 
-After installing oh-my-zsh both vim and zsh require proper symlinking from of theams from the dracula submodule
+# softwareused
+
+* awsomewm
+* nvim
+* tmux
+* alacritty
+
