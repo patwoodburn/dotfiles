@@ -4,6 +4,7 @@ pcall(require, "luarocks.loader")
 
 -- Standard awesome library
 local gears = require("gears")
+local icons_folder = gears.filesystem.get_configuration_dir().."resources/icons/"
 local awful = require("awful")
 require("awful.autofocus")
 -- Widget and layout library
@@ -111,12 +112,13 @@ myawesomemenu = {
 mymainmenu = awful.menu({
 	items = {
 		{ "awesome", myawesomemenu, beautiful.awesome_icon },
-		{ "open terminal", terminal },
-		{ "internet", internet_browser },
+		{ "terminal", terminal, icons_folder.."scalable/apps/alacritty.svg"},
+		{ "internet", internet_browser, icons_folder.."scalable/apps/chrome.svg" },
+    { "steam", "steam-runtime", icons_folder.."scalable/apps/steam.svg"}
 	},
 })
 
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, menu = mymainmenu })
+mylauncher = awful.widget.launcher({ image = gears.filesystem.get_configuration_dir().."resources/icons/symbolic/emotes/face-devilish-symbolic.svg", menu = mymainmenu })
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
