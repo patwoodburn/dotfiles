@@ -118,7 +118,7 @@ mymainmenu = awful.menu({
 	},
 })
 
-mylauncher = awful.widget.launcher({ image = gears.filesystem.get_configuration_dir().."resources/icons/symbolic/emotes/face-devilish-symbolic.svg", menu = mymainmenu })
+mylauncher = awful.widget.launcher({ image = gears.color.recolor_image(gears.filesystem.get_configuration_dir().."resources/ghost.svg", beautiful.fg_normal), menu = mymainmenu })
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
