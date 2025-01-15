@@ -545,7 +545,7 @@ awful.rules.rules = {
       type = { "normal", "dialog" }
     },
     except_any = {
-      class = {"steam_app_.*"}
+      class = {"steam_app_.*", "steam"}
     },
     properties = { titlebars_enabled = true }
   },
