@@ -261,7 +261,7 @@ awful.screen.connect_for_each_screen(function(s)
       battery{
         path_to_icons = gears.filesystem.get_configuration_dir().."resources/icons/symbolic/status/",
         show_current_level = true,
-        display_notification = true,
+        display_notification = false,
         margin_right = 1,
         margin_left = 1,
       },

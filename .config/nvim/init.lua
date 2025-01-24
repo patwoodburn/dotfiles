@@ -119,6 +119,7 @@ require("lazy").setup({
 			-- silent! colorscheme dracula
       vim.g.dracula_colorterm = 0
 			vim.cmd.colorscheme("dracula")
+      vim.g.dracula_colorterm = 0
 
 		end,
 	},
@@ -139,8 +140,6 @@ require("lazy").setup({
 			vim.g["localvimrc_ask"] = 0
 		end,
 	},
-	"junegunn/limelight.vim",
-	"junegunn/goyo.vim",
 	"bronson/vim-trailing-whitespace",
 	"terryma/vim-multiple-cursors",
 	{
@@ -284,6 +283,7 @@ require("lazy").setup({
 				zls = {},
 				kotlin_language_server = {},
 				jdtls = {},
+        zls = {},
 			}
 			require("mason").setup()
 
@@ -443,8 +443,8 @@ require("lazy").setup({
 				log_level = "error",
 				auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
 				auto_session_enable_last_session = true,
-				auto_save_enabled = true,
-				auto_restore_enabled = true,
+				auto_save_enabled = false,
+				auto_restore_enabled = false,
 				session_lens = {
 					load_on_setup = true,
 				},
@@ -461,4 +461,13 @@ require("lazy").setup({
 			})
 		end,
 	},
+  {
+    "nvim-tree/nvim-tree.lua",
+    version="*",
+    lazy=false,
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("nvim-tree").setup{}
+    end,
+  },
 })
