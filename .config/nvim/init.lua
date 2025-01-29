@@ -93,6 +93,9 @@ require("lazy").setup({
 		"rcarriga/nvim-notify",
 		event = "VimEnter",
 		config = function()
+      require("notify").setup({
+        background_colour="#000000",
+      })
 			notify = require("notify")
 			vim.notify = notify
 		end,
@@ -467,7 +470,68 @@ require("lazy").setup({
     lazy=false,
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require("nvim-tree").setup{}
+      require("nvim-tree").setup({
+        view = {
+          adaptive_size = false,
+          side = "left",
+          width = 20,
+          preserve_window_proportions = true,
+        },
+        git = {
+          enable = true,
+        },
+        filesystem_watchers = {
+          enable = true,
+        },
+        renderer = {
+          -- root_folder_label = true,
+          highlight_git = true,
+          highlight_opened_files = "none",
+          indent_markers = {
+            enable = true,
+          },
+          icons = {
+            show = {
+                file = true,
+                folder = true,
+                folder_arrow = true,
+                git = true,
+            },
+
+            glyphs = {
+                default = "󰈚",
+                symlink = "",
+                folder = {
+                    default = "",
+                    empty = "",
+                    empty_open = "",
+                    open = "",
+                    symlink = "",
+                    symlink_open = "",
+                    arrow_open = "",
+                    arrow_closed = "",
+                },
+                git = {
+                    unstaged = "✗",
+                    staged = "✓",
+                    unmerged = "",
+                    renamed = "➜",
+                    untracked = "★",
+                    deleted = "",
+                    ignored = "◌",
+                },
+            },
+        },
+      },
+    })
+      vim.keymap.set("n", "<leader>tv", vim.cmd.NvimTreeToggle)
     end,
+  },
+  {
+    "m4xshen/hardtime.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
+    opts = {}
   },
 })
