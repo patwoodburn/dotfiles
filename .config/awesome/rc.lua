@@ -58,7 +58,7 @@ beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 terminal = "alacritty"
 editor = "vim"
 editor_cmd = terminal .. " -e " .. editor
-internet_browser = "google-chrome-stable"
+internet_browser = "flatpak run app.zen_browser.zen"
 discord = "discord"
 
 -- Default modkey.
@@ -113,7 +113,7 @@ mymainmenu = awful.menu({
 	items = {
 		{ "awesome", myawesomemenu, beautiful.awesome_icon },
 		{ "terminal", terminal, icons_folder.."scalable/apps/alacritty.svg"},
-		{ "internet", internet_browser, icons_folder.."scalable/apps/chrome.svg" },
+		{ "internet", internet_browser, icons_folder.."scalable/apps/internet.svg" },
     { "steam", "steam-runtime", icons_folder.."scalable/apps/steam.svg"}
 	},
 })
