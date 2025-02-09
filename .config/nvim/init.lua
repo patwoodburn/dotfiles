@@ -126,23 +126,35 @@ require("lazy").setup({
 
 		end,
 	},
-	{
-		"vim-airline/vim-airline",
-		event = VimEnter,
-		dependencies = {
-			"vim-airline/vim-airline-themes",
-			--let g:localvimrc_sandbox=0
-			--let g:localvimrc_ask=0
-		},
-		config = function()
-			vim.o.laststatus = 2
-			vim.g["airline#extensions#tabline#enable"] = 1
-			vim.g["airline#_powerline_fonts"] = 1
-			vim.g["airline#extensions#enable"] = 1
-			vim.g["localvimrc_sandbox"] = 0
-			vim.g["localvimrc_ask"] = 0
-		end,
-	},
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      require('lualine').setup{
+        options = {
+          icons_enabled = true,
+          theme = drucula,
+        },
+      }
+    end,
+  },
+	-- {
+		-- "vim-airline/vim-airline",
+		-- event = VimEnter,
+		-- dependencies = {
+			-- "vim-airline/vim-airline-themes",
+			-- --let g:localvimrc_sandbox=0
+			-- --let g:localvimrc_ask=0
+		-- },
+		-- config = function()
+			-- vim.o.laststatus = 2
+			-- vim.g["airline#extensions#tabline#enable"] = 1
+			-- vim.g["airline#_powerline_fonts"] = 1
+			-- vim.g["airline#extensions#enable"] = 1
+			-- vim.g["localvimrc_sandbox"] = 0
+			-- vim.g["localvimrc_ask"] = 0
+		-- end,
+	-- },
 	"bronson/vim-trailing-whitespace",
 	"terryma/vim-multiple-cursors",
 	{
@@ -532,6 +544,8 @@ require("lazy").setup({
     dependencies = {
       "MunifTanjim/nui.nvim",
     },
-    opts = {}
+    opts = {
+      force_exit_insert_mode=true,
+    }
   },
 })

@@ -24,10 +24,14 @@ fi
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  tmux
+  zellij
+  # tmux
 )
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOCONNECT=false
+ZSH_ZELLIJ_AUTOSTART=true
+ZSH_ZELLIJ_AUTOCONNECT=false
+
+# ZSH_TMUX_AUTOSTART=true
+# ZSH_TMUX_AUTOCONNECT=false
 
 # User configuration
 #export PATH="/Users/pwoodb001c/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/MacGPG2/bin:$PATH"
