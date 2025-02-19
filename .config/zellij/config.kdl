@@ -1,3 +1,8 @@
+ui {
+  pane_frames{
+    hide_session_name true
+  }
+}
 keybinds clear-defaults=true {
     locked {
         bind "Ctrl g" { SwitchToMode "normal"; }
@@ -287,7 +292,7 @@ default_mode "locked"
 //   - true (default, enabled)
 //   - false
 // 
-// pane_frames false
+//pane_frames false
  
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)

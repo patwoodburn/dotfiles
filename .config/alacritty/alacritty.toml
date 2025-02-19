@@ -14,7 +14,7 @@ option_as_alt = "Both"
 
 [font]
 normal=  {family = "OpenDyslexicMono", style = "Regular"}
-size = 18
+size = 10
 
 [keyboard]
 bindings = [

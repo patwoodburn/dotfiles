@@ -451,31 +451,6 @@ require("lazy").setup({
 		end,
 	},
 	"kshenoy/vim-signature",
-	{
-		"rmagatti/auto-session",
-		config = function()
-			require("auto-session").setup({
-				log_level = "error",
-				auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-				auto_session_enable_last_session = true,
-				auto_save_enabled = false,
-				auto_restore_enabled = false,
-				session_lens = {
-					load_on_setup = true,
-				},
-				post_save_cmds = {
-					function()
-						vim.notify("session saved")
-					end,
-				},
-				post_restore_cmds = {
-					function()
-						vim.notify("session restored")
-					end,
-				},
-			})
-		end,
-	},
   {
     "nvim-tree/nvim-tree.lua",
     version="*",

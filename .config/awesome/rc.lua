@@ -129,7 +129,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+mytextclock = wibox.widget.textclock('%a %b %d %I:%M')
 -- mytextclock = require("awesome-wm-widgets.word-clock-widget.word-clock")
 battery = require("awesome-wm-widgets.battery-widget.battery")
 volume = require("awesome-wm-widgets.volume-widget.volume")
