@@ -18,7 +18,7 @@ size = 10
 
 [keyboard]
 bindings = [
-  {key = "V", mods = "Control", action = "Paste"}
+  ##  {key = "V", mods = "Control", action = "Paste"}
 ]
 
 [colors.primary]
