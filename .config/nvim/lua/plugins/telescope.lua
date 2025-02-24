@@ -1,4 +1,4 @@
-local plugin = { "nvim-tlescope/telescope.nvim" }
+local plugin = { "nvim-telescope/telescope.nvim" }
 plugin.event = VimEnter
 plugin.dependencies = {
   "nvim-lua/plenary.nvim",

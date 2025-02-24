@@ -4,18 +4,11 @@ plugin.dependencies = {
   {
     "nvim-orgmode/orgmode",
     tag = "0.3.7",
-    -- ft = {"org"},
     event = "VeryLazy",
     config = function()
       require("orgmode").setup({
-        org_agenda_files = "~/org/agenda",
+        org_agenda_files = "~/org/agenda/**/*",
         org_default_notes_file = "~/org/refile.org",
-        ui = {
-          input = {
-            use_vim_ui = true
-          },
-        },
-
       })
     end
   }

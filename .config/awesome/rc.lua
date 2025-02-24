@@ -583,6 +583,12 @@ client.connect_signal("manage", function(c)
   end
 end)
 
+client.connect_signal("request::tag", function(c)
+    if c.class == "Alacritty" then
+        awful.spawn.with_shell("resize-increment " .. c.window .. " 6 12")
+    end
+end)
+
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal("request::titlebars", function(c)
 	-- buttons for the titlebar
