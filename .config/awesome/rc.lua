@@ -547,7 +547,10 @@ awful.rules.rules = {
     except_any = {
       class = {"steam_app_.*", "steam"}
     },
-    properties = { titlebars_enabled = true }
+    properties = {
+      titlebars_enabled = true,
+      placement = awful.placement.no_overlap+awful.placement.no_offscreen,
+    }
   },
 
   {
@@ -558,6 +561,7 @@ awful.rules.rules = {
     },
     properties = {
       ontop = true,
+      titlebars_enabled = false,
       honor_workarea = false,
     }
   }
