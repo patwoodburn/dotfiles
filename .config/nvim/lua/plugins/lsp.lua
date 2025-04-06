@@ -44,6 +44,7 @@ function plugin.config()
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
   local servers = {
+    clangd = {},
     rust_analyzer = {},
     jdtls = {},
     kotlin_language_server = {},
@@ -57,6 +58,7 @@ function plugin.config()
       },
     },
     zls = {},
+    marksman = {},
   }
   require("mason").setup()
 

@@ -27,7 +27,7 @@ vim.o.spell = true
 vim.o.showmode = false
 
 -- better clipboard
-vim.o.clipboard = "unnamedplus"
+-- vim.o.clipboard = "unnamedplus"
 
 -- confterble function writing
 vim.o.breakindent = true
@@ -48,7 +48,7 @@ vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 
 -- better scrolling
---vim.o.so=999
+vim.o.so=999
 
 -- tabs and white space
 vim.o.expandtab = true
@@ -60,3 +60,28 @@ vim.o.autoindent = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.wrap = false
+
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = { active = signs},
+  update_in_insert = true,
+  underline = true,
+  severity_sort = true,
+  float = {
+    focusable = false,
+    style = 'minimal',
+    border = 'rounded',
+    source = 'always',
+    header = '',
+    prefix = '',
+  },
+})
+
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+  vim.lsp.handlers.signatures_help,
+  {border = 'rounded'}
+)
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+  vim.lsp.handlers.hover,
+  {border = 'rounded'}
+)

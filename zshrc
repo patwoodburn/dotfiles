@@ -2,11 +2,11 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 if [[ $TERM = (*256color|*rxvt*) ]]; then
-  turquoise="%{${(%):-"%F{79}"}%}"
-  orange="%{${(%):-"%F{215}"}%}"
-  purple="%{${(%):-"%F{104}"}%}"
-  hotpink="%{${(%):-"%F{161}"}%}"
-  limegreen="%{${(%):-"%F{118}"}%}"
+  turquoise="%{${(%):-"%F{#2b5d63}"}%}"
+  orange="%{${(%):-"%F{#c49060}"}%}"
+  purple="%{${(%):-"%F{#bb70d0}"}%}"
+  hotpink="%{${(%):-"%F{#914141}"}%}"
+  limegreen="%{${(%):-"%F{#8fb573}"}%}"
 else
   turquoise="%{${(%):-"%F{cyan}"}%}"
   orange="%{${(%):-"%F{yellow}"}%}"
@@ -24,11 +24,11 @@ fi
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  zellij
+  #zellij
   # tmux
 )
-ZSH_ZELLIJ_AUTOSTART=true
-ZSH_ZELLIJ_AUTOCONNECT=false
+#ZSH_ZELLIJ_AUTOSTART=true
+#ZSH_ZELLIJ_AUTOCONNECT=false
 
 # ZSH_TMUX_AUTOSTART=true
 # ZSH_TMUX_AUTOCONNECT=false
@@ -137,3 +137,9 @@ ZSH_THEME_VIRTUALENV_SUFFIX="%{$reset_color%}"
 
 setopt prompt_subst
 PROMPT="${purple}%n%{$reset_color%} in ${limegreen}%~%{$reset_color%}\$(virtualenv_prompt_info)\$(ruby_prompt_info)\$vcs_info_msg_0_${white} 👻%{$reset_color%} "
+
+eval $(thefuck --alias)
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
