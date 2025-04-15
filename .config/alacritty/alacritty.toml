@@ -14,7 +14,7 @@ option_as_alt = "Both"
 
 [font]
 normal=  {family = "OpenDyslexicMono", style = "Regular"}
-size = 12
+size = 10
 
 [keyboard]
 bindings = [
@@ -23,8 +23,8 @@ bindings = [
 
 [colors.primary]
 
-background = "#282a36"
-foreground = "#f8f8f2"
+background = "#1a212e"
+foreground = "#93a4c3"
 bright_foreground = "#ffffff"
 
 [colors.cursor]
@@ -44,14 +44,14 @@ background = "#44475a"
 
 [colors.normal]
 
-black = "#21222c"
-red = "#ff5555"
-green = "#50fa7b"
-yellow = "#f1fa8c"
-blue = "#bd93f9"
-magenta = "#ff79c6"
-cyan = "#8be9fd"
-white = "#f8f8f2"
+black = "#0c0e15"
+red = "#f65866"
+green = "#8bcd5b"
+yellow = "#efbd5d"
+blue = "#41a7fc"
+magenta = "#c75ae8"
+cyan = "#34bfd0"
+white = "#93a4c3"
 
 [colors.bright]
 

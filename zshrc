@@ -2,11 +2,11 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 if [[ $TERM = (*256color|*rxvt*) ]]; then
-  turquoise="%{${(%):-"%F{#2b5d63}"}%}"
+  turquoise="%{${(%):-"%F{#34bfd0}"}%}"
   orange="%{${(%):-"%F{#c49060}"}%}"
   purple="%{${(%):-"%F{#bb70d0}"}%}"
   hotpink="%{${(%):-"%F{#914141}"}%}"
-  limegreen="%{${(%):-"%F{#8fb573}"}%}"
+  limegreen="%{${(%):-"%F{#8bcd5b}"}%}"
 else
   turquoise="%{${(%):-"%F{cyan}"}%}"
   orange="%{${(%):-"%F{yellow}"}%}"

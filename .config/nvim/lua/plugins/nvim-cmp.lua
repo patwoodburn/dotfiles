@@ -80,8 +80,8 @@ function plugin.config ()
     window={
       completion = {
         scrollbar = false,
-        side_padding = atom_styled and 0 or 1,
-        winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:None,FloatBorder:CmpBorder",
+        side_padding = 1,
+        winhighlight = "Normal:CmpPmenu,CursorLine:Visual,Search:None,FloatBorder:CmpBorder",
         border = "single",
       },
       documentation = {

@@ -15,20 +15,17 @@ local theme = {}
 
 
 -- https://github.com/dracula/dracula-theme
-theme.bg_normal = "#1e2029"
-theme.bg_focus = "#282a36"
-theme.bg_urgent = "#ff5555"
-theme.bg_minimize = "#000000"
-theme.bg_systray = theme.bg_normal
-
-theme.fg_normal = "#f8f8f2"
+theme.bg_normal = "#1a212e"
+theme.bg_focus = "#21283b"
+theme.bg_urgent = "#f2cc81"
+theme.fg_normal = "#93a4c3"
 theme.fg_focus = "#ffffff"
 theme.fg_urgent = "#f8f8f2"
 
 theme.useless_gap = dpi(4)
 theme.border_width = dpi(4)
 theme.border_normal = theme.bg_normal
-theme.border_focus = "#bd93f9" -- "#6272a4"
+theme.border_focus = "#c75ae8" -- "#6272a4"
 theme.border_marked = "#ff79c6"
 
 -- Extras
@@ -36,13 +33,13 @@ theme.titlebar_bg_focus = theme.bg_normal
 theme.hotkeys_modifiers_fg = "#adadad"
 
 -- dracul colors
-theme.cyan = "#8be9fd"
-theme.green = "#50fa7b"
-theme.orange = "#ffb86c"
+theme.cyan = "#34bfd0"
+theme.green = "#8bcd5b"
+theme.orange = "#dd9046"
 theme.pink = "#ff79c6"
-theme.purple = "#bd93f9"
-theme.red = "#ff5555"
-theme.yellow = "#f1fa8c"
+theme.purple = "#c75ae8"
+theme.red = "#f65866"
+theme.yellow = "#efbd58"
 
 -- Wibar
 theme.taglist_squares_sel = themes_path.."/taglist/squarefw.png"

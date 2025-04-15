@@ -4,7 +4,7 @@ function plugin.config ()
   require('lualine').setup{
     options = {
       icons_enabled = true,
-      theme = drucula,
+      theme = "onedark",
     },
   }
 end

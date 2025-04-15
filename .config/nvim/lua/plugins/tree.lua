@@ -3,7 +3,7 @@ plugin.version = "*"
 plugin.lazy = false
 plugin.dependencies = { "nvim-tree/nvim-web-devicons" }
 function plugin.config()
-  vim.keymap.set("n", "<leader>tv", vim.cmd.NvimTreeToggle)
+  vim.keymap.set("n", "<leader>tv", vim.cmd.NvimTreeToggle, {desc= "[T]ree [V]iew"})
   require("nvim-tree").setup({
     view = {
       adaptive_size = false,
