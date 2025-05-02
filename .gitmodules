@@ -1,12 +1,12 @@
 [submodule ".config/awesome/--force"]
-	path = .config/awesome/--force
+	path = home/dkg/awesome/--force
 	url = https://github.com/streetturtle/awesome-wm-widgets.git
-[submodule ".config/awesome/awesome-wm-widgets"]
-	path = .config/awesome/awesome-wm-widgets
+[submodule "home/dkg/awesome/awesome-wm-widgets"]
+	path = home/dkg/awesome/awesome-wm-widgets
 	url = https://github.com/streetturtle/awesome-wm-widgets.git
-[submodule ".config/awesome/resources/dracula-icons"]
-	path = .config/awesome/resources/dracula-icons
+[submodule "home/dkg/awesome/resources/dracula-icons"]
+	path = home/dkg/awesome/resources/dracula-icons
 	url = https://github.com/m4thewz/dracula-icons.git
-[submodule ".config/awesome/awesome-buttons"]
-	path = .config/awesome/awesome-buttons
+[submodule "home/dkg/awesome/awesome-buttons"]
+	path = home/dkg/awesome/awesome-buttons
 	url = https://github.com/streetturtle/awesome-buttons.git
