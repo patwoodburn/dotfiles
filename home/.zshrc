@@ -1,5 +1,8 @@
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+if (( ${+ZSH} )); then
+else
+  export ZSH="$HOME/.oh-my-zsh"
+fi
 
 if [[ $TERM = (*256color|*rxvt*) ]]; then
   turquoise="%{${(%):-"%F{#34bfd0}"}%}"

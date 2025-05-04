@@ -13,9 +13,9 @@ blur = true
 option_as_alt = "Both"
 
 [font]
-normal=  {family = "OpenDyslexicMono", style = "Regular"}
+normal=  {family = "OpenDyslexicM Nerd Font Mono", style = "Regular"}
 offset.y=2
-size = 12
+size = 16
 
 [keyboard]
 bindings = [
