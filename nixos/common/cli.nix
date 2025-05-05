@@ -10,6 +10,7 @@
     pkgs.stow
     pkgs.neovim
     pkgs.git
+    pkgs.lshw
   ];
   programs.zsh = {
     enable = true;
