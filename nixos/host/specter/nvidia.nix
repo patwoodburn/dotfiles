@@ -1,7 +1,12 @@
 { config, pkgs, lib, ...}: 
 {
   ## Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = ["nvidia" "intel"];
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+    ];
+  };
   hardware.nvidia = {
     # Modesetting is required.
     modesetting.enable = true;
@@ -19,7 +24,7 @@
     # supported GPUs is at: 
     # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
     # Only available from driver 515.43.04+
-    open = false;
+    open = true;
     # Enable the Nvidia settings menu,
     # accessible via `nvidia-settings`.
     nvidiaSettings = true;
@@ -30,14 +35,14 @@
         enable = true;
         enableOffloadCmd = true;
       };
-      nvidiaBusId = "PCI:01:00:0";
-      intelBusId = "PCI:00:02:0";
+      nvidiaBusId = "PCI:1:0:0";
+      intelBusId = "PCI:0:2:0";
     };
   };
   services.hardware.bolt.enable = true;
-  hardware = {
-    graphics = {
-      enable = true;
-    };
-  };
+  #hardware = {
+  #  graphics = {
+  #    enable = true;
+  #  };
+  #};
 }

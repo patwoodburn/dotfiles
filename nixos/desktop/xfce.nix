@@ -17,7 +17,7 @@
   services.printing.enable = true;
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
-  services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
+  services.xserver.videoDrivers = [ "displaylink" "modesetting" "nvidia" "intel"];
   services.xserver.displayManager.sessionCommands = ''
     ${lib.getBin pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
   '';

@@ -11,6 +11,9 @@
     pkgs.neovim
     pkgs.git
     pkgs.lshw
+    pkgs.usbutils
+    pkgs.pciutils
+    pkgs.bolt
   ];
   programs.zsh = {
     enable = true;

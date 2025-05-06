@@ -8,10 +8,10 @@
     ../../common/cli.nix
     ../../common/sound.nix
     ../../desktop/xfce.nix
+    #../../sway.nix
     ../../desktop/gameable.nix
 
   ];
-
 
   environment.systemPackages = with pkgs; [
     pkgs.arandr
