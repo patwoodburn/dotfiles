@@ -7,15 +7,15 @@ padding.y = 10
 
 decorations = "Full"
 
-opacity = 0.9
+opacity = 0.8
 blur = true
 
 option_as_alt = "Both"
 
 [font]
-normal=  {family = "OpenDyslexicM Nerd Font Mono", style = "Regular"}
+ normal=  {family = "OpenDyslexicM Nerd Font Mono", style = "Regular"}
 offset.y=2
-size = 16
+size = 12
 
 [keyboard]
 bindings = [
@@ -24,8 +24,8 @@ bindings = [
 
 [colors.primary]
 
-background = "#1a212e"
-foreground = "#93a4c3"
+background = "#282a36"
+foreground = "#f8f8f2"
 bright_foreground = "#ffffff"
 
 [colors.cursor]
@@ -45,14 +45,14 @@ background = "#44475a"
 
 [colors.normal]
 
-black = "#0c0e15"
-red = "#f65866"
-green = "#8bcd5b"
-yellow = "#efbd5d"
-blue = "#41a7fc"
-magenta = "#c75ae8"
-cyan = "#34bfd0"
-white = "#93a4c3"
+black = "#21222c"
+red = "#ff5555"
+green = "#50fa7b"
+yellow = "#f1fa8c"
+blue = "#bd93f9"
+magenta = "#ff79c6"
+cyan = "#8be9fd"
+white = "#f8f8f2"
 
 [colors.bright]
 

@@ -59,7 +59,7 @@ vim.o.autoindent = true
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 vim.diagnostic.config({
   virtual_text = true,

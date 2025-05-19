@@ -4,6 +4,6 @@ function plugin.config ()
     style = 'deep',
     transparent = true,
   }
-  require('onedark').load()
+  --require('onedark').load()
 end
 return plugin

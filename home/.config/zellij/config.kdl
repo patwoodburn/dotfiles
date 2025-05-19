@@ -252,7 +252,7 @@ ui {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "onedark"
+theme "dracula"
  
 // Choose the base input mode of zellij.
 // Default: normal

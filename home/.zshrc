@@ -5,11 +5,11 @@ else
 fi
 
 if [[ $TERM = (*256color|*rxvt*) ]]; then
-  turquoise="%{${(%):-"%F{#34bfd0}"}%}"
-  orange="%{${(%):-"%F{#c49060}"}%}"
-  purple="%{${(%):-"%F{#bb70d0}"}%}"
-  hotpink="%{${(%):-"%F{#914141}"}%}"
-  limegreen="%{${(%):-"%F{#8bcd5b}"}%}"
+  turquoise="%{${(%):-"%F{#8be9fd}"}%}"
+  orange="%{${(%):-"%F{#ffb86c}"}%}"
+  purple="%{${(%):-"%F{#bd93f9}"}%}"
+  hotpink="%{${(%):-"%F{#ff79c6}"}%}"
+  limegreen="%{${(%):-"%F{#50fa7b}"}%}"
 else
   turquoise="%{${(%):-"%F{cyan}"}%}"
   orange="%{${(%):-"%F{yellow}"}%}"
